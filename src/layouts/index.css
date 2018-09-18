@@ -31,12 +31,20 @@ a {
   color: white;
   font-size: 60px;
   line-height: 1.2;
+  opacity: 0;
+  animation: HeroAnimation;
+  animation-duration: 3s;
+  animation-delay: .1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(.2, .8, .2, 1);
 }
 
 .Hero p {
   color: rgba(255, 255, 255, .8);
   font-size: 30px;
   line-height: 1.5;
+  animation: HeroAnimation 3s .2s forwards cubic-bezier(.2, .8, .2, 1);
+  opacity: 0;
 }
 
 .Hero a {
@@ -48,4 +56,36 @@ a {
   padding: 9px 20px;
   border: 1px solid rgba(255, 255, 255, .25);
   border-radius: 20px;
+  transition: .8s cubic-bezier(.2, .8, .2, 1);
+}
+
+.Hero a:hover {
+  background: white;
+  color: black;
+  
+}
+
+@media (max-width: 640px) {
+  .HeroGroup {
+    padding: 100px 20px;
+  }
+
+  .Hero h1 {
+    font-size: 40px;
+  }
+
+  .Hero p {
+    font-size: 24px;
+  }
+}
+
+@keyframes HeroAnimation {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
 }
