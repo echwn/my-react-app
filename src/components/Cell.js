@@ -23,6 +23,9 @@ const CellTitle = styled.div`
   padding: 30px 0;
 `
 
+const SectionCaption = styled.div`
+`
+
 const Cell = props => (
   <CellGroup>
     <CellImage image={props.image}></CellImage>
